@@ -1,0 +1,11 @@
+mixin button(text, type)
+  - type = type || 'default'
+  case type
+    when 'colored'
+      button(class="button button_type_colored")= text
+    when 'colorless'
+      button(class="button button_type_colorless")= text
+    default
+      button.button= text
+        div.button__arrow-forward
+

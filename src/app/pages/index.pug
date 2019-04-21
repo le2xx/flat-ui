@@ -1,5 +1,11 @@
 extends ../components/layout/layout
+include  ../components/button/button
 
 block body
-  include ../components/header/header
-  include ../components/footer/footer
+  +button('перейти к оплате')
+  br
+  br
+  +button('click me', 'colored')
+  br
+  br
+  +button('click me', 'colorless')

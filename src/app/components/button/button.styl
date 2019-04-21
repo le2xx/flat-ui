@@ -1,0 +1,58 @@
+.button
+  position relative
+  width 320px
+  height 44px
+  border none
+  border-radius 22px
+  background linear-gradient(180deg, $color-sec 0%, $color-sec-grad 100%)
+  outline none
+  font(12, #fff, false, false,700)
+  font-family Montserrat, sans-serif
+  text-transform uppercase
+
+  &:hover
+    opacity .5
+
+  &__arrow-forward
+    position absolute
+    top 0
+    right 13px
+    bottom 0
+    margin auto
+    width 18px
+    height 18px
+    background url('/assets/images/arrow_forward.svg') no-repeat
+    background-size contain
+
+  &_type_colored
+    width 99px
+    height 44px
+
+  &_type_colorless
+    width 95px
+    height 40px
+    background $color-white
+    color $color-sec
+    left 2px
+
+    &::before
+      content ''
+      position absolute
+      top -2px
+      left -2px
+      background linear-gradient(180deg, $color-sec 0%, $color-sec-grad 100%)
+      width 99px
+      height 44px
+      z-index -1
+      border-radius 22px
+
+    &::after
+      content ''
+      position absolute
+      top 0
+      left 0
+      background $color-white
+      width 95px
+      height 40px
+      border-radius 22px
+      z-index -1
