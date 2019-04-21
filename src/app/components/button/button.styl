@@ -2,12 +2,12 @@
   position relative
   width 320px
   height 44px
+  font(12, #fff, false, false, 700)
+  font-family Montserrat, sans-serif
+  background linear-gradient(180deg, $color-sec 0, $color-sec-grad 100)
   border none
   border-radius 22px
-  background linear-gradient(180deg, $color-sec 0%, $color-sec-grad 100%)
   outline none
-  font(12, #fff, false, false,700)
-  font-family Montserrat, sans-serif
   text-transform uppercase
 
   &:hover
@@ -29,30 +29,30 @@
     height 44px
 
   &_type_colorless
+    left 2px
     width 95px
     height 40px
-    background $color-white
     color $color-sec
-    left 2px
+    background $color-white
 
     &::before
-      content ''
       position absolute
+      z-index -1
       top -2px
       left -2px
-      background linear-gradient(180deg, $color-sec 0%, $color-sec-grad 100%)
       width 99px
       height 44px
-      z-index -1
+      content ''
+      background linear-gradient(180deg, $color-sec 0, $color-sec-grad 100)
       border-radius 22px
 
     &::after
-      content ''
       position absolute
+      z-index -1
       top 0
       left 0
-      background $color-white
       width 95px
       height 40px
+      content ''
+      background $color-white
       border-radius 22px
-      z-index -1

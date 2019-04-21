@@ -1,0 +1,38 @@
+.checkbox
+  position relative
+  cursor pointer
+
+  &__label
+    display inline
+    font(14, $color-main-50, false, 18, 400)
+    font-family Montserrat, sans-serif
+    vertical-align middle
+
+    &::before
+      margin 0 10px 0 0
+      display inline-block
+      width 20px
+      height 20px
+      vertical-align middle
+      content ''
+      border 1px solid $color-main-25
+      border-radius 4px
+
+    &::after
+      position absolute
+      top 5px
+      left 6px
+      display inline-block
+      width 10px
+      height 10px
+      content ''
+
+  &__input
+    display none
+
+    &:checked ~ .checkbox__label::after
+      background url('/assets/images/dawmark.svg') no-repeat
+      background-size cover
+
+    &:checked ~ .checkbox__label::before
+      border-color $color-sec

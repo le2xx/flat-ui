@@ -1,5 +1,6 @@
 extends ../components/layout/layout
 include  ../components/button/button
+include  ../components/checkbox/checkbox
 
 block body
   +button('перейти к оплате')
@@ -9,3 +10,9 @@ block body
   br
   br
   +button('click me', 'colorless')
+  br
+  br
+  +checkbox('Можно курить', 'form', true)
+  br
+  br
+  +checkbox('Можно с питомцами', 'fork')
