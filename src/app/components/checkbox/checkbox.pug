@@ -1,5 +1,5 @@
-mixin checkbox(text, name, isCheked)
-  - checked = isCheked || false
+mixin checkbox(text, name, isChecked)
+  - checked = isChecked || false
   label.checkbox
-    input(type="checkbox" name=name value=text class="checkbox__input" checked=(isCheked ? 'checked' : undefined))
+    input(type="checkbox" name=name value=text class="checkbox__input" checked=(isChecked ? 'checked' : undefined))
     span.checkbox__label= text

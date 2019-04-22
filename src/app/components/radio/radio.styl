@@ -1,0 +1,42 @@
+.radio
+  position relative
+  cursor pointer
+
+  &__label
+    display inline
+    font(14, $color-main-50, false, 24, 'normal')
+    font-family Montserrat, sans-serif
+    vertical-align middle
+
+    &::before
+      margin 0 10px 0 0
+      display inline-block
+      width 20px
+      height 20px
+      vertical-align middle
+      content ''
+      border solid 1px $color-main-25
+      border-radius 50%
+
+    &::after
+      position absolute
+      top 6px
+      left 5px
+      margin auto
+      display inline-block
+      width 12px
+      height 12px
+      content ''
+
+  &__input
+    display none
+
+    &:checked ~ .radio__label
+      color $color-main-75
+
+    &:checked ~ .radio__label::before
+      border-color $color-sec
+
+    &:checked ~ .radio__label::after
+      background linear-gradient(180deg, $color-sec 0, $color-sec-grad 100)
+      border-radius 50%

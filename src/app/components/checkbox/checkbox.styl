@@ -30,9 +30,9 @@
   &__input
     display none
 
+    &:checked ~ .checkbox__label::before
+      border-color $color-sec
+
     &:checked ~ .checkbox__label::after
       background url('/assets/images/dawmark.svg') no-repeat
       background-size cover
-
-    &:checked ~ .checkbox__label::before
-      border-color $color-sec

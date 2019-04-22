@@ -1,6 +1,7 @@
-extends ../components/layout/layout
+extends  ../components/layout/layout
 include  ../components/button/button
 include  ../components/checkbox/checkbox
+include  ../components/radio/radio
 
 block body
   +button('перейти к оплате')
@@ -16,3 +17,9 @@ block body
   br
   br
   +checkbox('Можно с питомцами', 'fork')
+  br
+  br
+  +radio('Мужчина', 'radio', true)
+  br
+  br
+  +radio('Женщина', 'radio')

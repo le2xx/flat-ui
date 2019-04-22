@@ -1,0 +1,5 @@
+mixin radio(text, name, isChecked)
+  - checked = isChecked || false
+  label.radio
+    input(type="radio", name=name, value=text, class="radio__input" checked=(isChecked ? 'checked' : undefined))
+    span(class=(isChecked ? 'radio__label' : 'radio__label radio__label_checked'))= text
