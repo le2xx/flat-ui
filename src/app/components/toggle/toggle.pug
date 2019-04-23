@@ -1,0 +1,5 @@
+mixin toggle(text, name, isChecked)
+  - checked = isChecked || false
+  label.toggle
+    input(type="checkbox" name=name, value=text checked=(isChecked ? 'checked' : undefined) class="toggle__input")
+    span(class="toggle__label")= text

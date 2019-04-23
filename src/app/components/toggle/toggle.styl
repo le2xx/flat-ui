@@ -1,0 +1,41 @@
+.toggle
+  position relative
+  cursor pointer
+
+  &__label
+    display inline
+    font(14, $color-main-75, false, 14, 400)
+    font-family Montserrat, sans-serif
+    vertical-align middle
+
+    &::before
+      margin 0 10px 0 0
+      display inline-block
+      width 40px
+      height 20px
+      vertical-align middle
+      content ''
+      border solid 1px $color-main-25
+      border-radius 10px
+
+    &::after
+      position absolute
+      top 5px
+      left 5px
+      width 12px
+      height 12px
+      content ''
+      background $color-main-25
+      border-radius 50%
+      transition left .3s ease-in-out
+
+  &__input
+    display none
+
+    &:checked ~ .toggle__label::before
+      border-color $color-sec
+
+    &:checked ~ .toggle__label::after
+      left 25px
+      background linear-gradient(180deg, $color-sec 0, $color-sec-grad 100)
+      transition left .3s ease-in-out
