@@ -40,7 +40,8 @@ class Templates {
   }
 
   get pug() {
-    return `.${this.name} This is ${this.name} component\r\n`;
+    return `mixin ${this.name}()
+\t.${this.name}\r\n`;
   }
 
   get styl() {
