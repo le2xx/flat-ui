@@ -1,0 +1,33 @@
+.like
+  position relative
+  padding 0 0 0 15px
+  display block
+  width 40px
+  height 20px
+  font(10, $color-main-25, false, false, 400)
+  font-family Montserrat
+  text-align center
+  cursor pointer
+  background $color-white
+  border solid 1px $color-main-25
+  border-radius 20px
+  outline none
+
+  &::before
+    position absolute
+    top 5px
+    left 5px
+    margin auto
+    display block
+    width 10px
+    height 8px
+    content ''
+    background url('/assets/images/like.svg') no-repeat
+
+  &__liked
+    color $color-sec
+    border-color $color-sec
+
+    &::before
+      background url('/assets/images/like_hover.svg') no-repeat
+

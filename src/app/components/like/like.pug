@@ -1,0 +1,3 @@
+mixin like(text, liked)
+	- liked = liked || false
+	button(class=(!liked ? 'like' : 'like like__liked'))=text
