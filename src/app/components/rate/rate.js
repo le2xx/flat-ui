@@ -1,44 +1,35 @@
 const rate = () => {
   const rateNodes = document.querySelectorAll('.rate');
 
-  Array.prototype.forEach.call(rateNodes, (node) => {
-    Array.prototype.forEach.call(node.childNodes, (el) => {
-      el.addEventListener('click', () => click(node, el));
-      el.addEventListener('mouseover', () => mouseOverOut(node, el));
-      el.addEventListener('mouseout', () => mouseOverOut(node, el, true));
-      // node.addEventListener('mouseleave', () => clearRate(node));
-    })
-  });
-
-  const click = (node, el) => {
-    const rateItems = node.childNodes;
-    const index = Array.prototype.slice.call(node.childNodes).indexOf(el);
-    rateItems.forEach((el, i) => {
-      i <= index ? el.className = "rate__btn rate__btn_item-clicked" : "rate__btn";
+  const modificationGround = (node, event) => {
+    const singleElementWidth = node.clientWidth / 5;
+    const currentPosition = Math.round(event.offsetX / singleElementWidth);
+    Array.prototype.forEach.call(node.getElementsByTagName('div'), (el, i) => {
+      i <= currentPosition ? el.className = "rate__item rate__item_background_image" : el.className = "rate__item";
     });
-  };
-
-  const mouseOverOut = (node, el, mouseout = false) => {
-    const rateItems = node.childNodes;
-    const index = Array.prototype.slice.call(node.childNodes).indexOf(el);
-
-    if (!mouseout) {
-      rateItems.forEach((el, i) => {
-        i <= index ? el.className = "rate__btn rate__btn_item-clicked" : "rate__btn";
-      });
-    } else {
-      rateItems.forEach((el, i) => {
-        i > index - 1 ? el.className = "rate__btn" : "rate__btn rate__btn_item-clicked";
-      });
-    }
   };
 
   const clearRate = (node) => {
     const rateItems = node.childNodes;
     rateItems.forEach((el) => {
-      el.className = "rate__btn";
+      el.className = "rate__item";
     });
   };
+
+  Array.prototype.forEach.call(rateNodes, (node) => {
+
+    const mousemoveFunc = modificationGround.bind(null, node);
+    const mouseoutFunc = clearRate.bind(null, node);
+
+    node.addEventListener('mousemove', mousemoveFunc);
+    node.addEventListener('mouseout', mouseoutFunc);
+    node.addEventListener('click', (event) => {
+      const clickPosition = Math.round(event.offsetX / (node.clientWidth / 5));
+      console.log(clickPosition);
+      node.removeEventListener('mousemove', mousemoveFunc);
+      node.removeEventListener('mouseout', mouseoutFunc);
+    });
+  });
 
 };
 

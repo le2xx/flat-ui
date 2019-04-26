@@ -1,14 +1,17 @@
 .rate
+	width 136px
+	cursor pointer
 
-	&__btn
+	&__item
+		position relative
+		z-index -1
 		padding 0
 		display inline-block
-		width 20px
-		height 19px
-		cursor pointer
-		background url('/assets/images/star_border.svg') no-repeat
+		width 24px
+		height 24px
+		background url('/assets/images/star_border.svg') no-repeat center
 		border none
 		outline none
 
-		&_item-clicked
-			background url('/assets/images/star.svg') no-repeat
+		&_background_image
+			background url('/assets/images/star.svg') no-repeat center
